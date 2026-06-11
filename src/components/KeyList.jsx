@@ -4,8 +4,11 @@ import KeyCard from './KeyCard'
 
 export default function KeyList() {
   const keys = useKeyStore((s) => s.keys)
-  const filterKeys = useSearchStore((s) => s.filterKeys)
   const openAddForm = useKeyStore((s) => s.openAddForm)
+  useSearchStore((s) => s.keyword)
+  useSearchStore((s) => s.filterPurpose)
+  useSearchStore((s) => s.onlyLent)
+  const filterKeys = useSearchStore((s) => s.filterKeys)
 
   const filteredKeys = filterKeys(keys)
 
